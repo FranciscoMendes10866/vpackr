@@ -15,7 +15,7 @@ module.exports = {
         alias: {
           '@providers': './src/providers',
           '@functions': './src/functions',
-          '@others': './src/others',
+          '@middlewares': './src/middlewares',
           '@utils': './src/utils'
         }
       }]

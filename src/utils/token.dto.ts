@@ -1,3 +1,3 @@
-export default interface TokenPayload {
+export default interface TokenDTO {
     id: string
 }

@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import { verify } from 'jsonwebtoken'
 
-import TokenPayload from '@utils/token.dto'
+import TokenDTO from '@utils/token.dto'
 
 const { JWT_SECRET_KEY } = process.env
 
@@ -12,7 +12,7 @@ const AuthGuard = (req: Request, res: Response, next: NextFunction) => {
   }
   try {
     const decoded = verify(token, JWT_SECRET_KEY)
-    const { id } = decoded as TokenPayload
+    const { id } = decoded as TokenDTO
     req.tokenId = id
     return next()
   } catch {
