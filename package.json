@@ -48,7 +48,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev --cls -r tsconfig-paths/register --respawn --transpile-only --no-notify src/main.ts",
-    "build": "babel src --extensions \".js,.ts\" --out-dir build --copy-files --no-copy-ignored",
+    "build": "babel src --extensions \".js,.ts\" --out-dir build --copy-files --no-copy-ignored --ignore '**/*.spec.ts'",
     "start": "node ./build/main.js",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --fix src --ext .ts",
