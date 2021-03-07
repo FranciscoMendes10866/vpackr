@@ -5,18 +5,18 @@ import morgan from 'morgan'
 import compression from 'compression'
 import cookieParser from 'cookie-parser'
 
-import UserRouter from './user/user.router'
+import AuthRouter from '@auth/auth.router'
 
-const { NODE_ENV } = process.env
+const { NODE_ENV, CORS_ORIGIN } = process.env
 const app = express()
 
 if (NODE_ENV !== 'TESTING') app.use(morgan('dev'))
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({ credentials: true, origin: CORS_ORIGIN }))
 app.use(helmet())
 app.use(cookieParser())
 app.use(compression())
-app.use('/api/users', UserRouter)
+app.use('/api/auth', AuthRouter)
 
 export default app

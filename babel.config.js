@@ -16,7 +16,8 @@ module.exports = {
           '@providers': './src/providers',
           '@functions': './src/functions',
           '@middlewares': './src/middlewares',
-          '@utils': './src/utils'
+          '@utils': './src/utils',
+          '@auth': './src/auth'
         }
       }]
     ]
